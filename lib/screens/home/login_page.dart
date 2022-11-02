@@ -62,22 +62,28 @@ class _LoginPageState extends State<LoginPage>{
                                 decoration: ThemeHelper().textInputDecoration('Password', 'Enter your password'),
                               ),
                             ),
-                            Container(
-                              decoration: ThemeHelper().buttonBoxDecoration(context),
-                              child: ElevatedButton(
-                                style: ThemeHelper().buttonStyle(),
+                            const SizedBox(height: 24,),
+                            ElevatedButton(
+                                style: ButtonStyle(
+                                  // ignore: prefer_const_constructors
+                                  backgroundColor: MaterialStateProperty.all(Color.fromARGB(255, 76, 77, 79)),
+                                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                    RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(30),
+                                    )
+                                  ),
+                                ),
                                 child: Padding(
-                                  padding: const EdgeInsets.fromLTRB(40, 10, 40, 10),
-                                  child: Text('Sign In'.toUpperCase(), style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),),
+                                  padding: const EdgeInsets.fromLTRB(40, 10, 40, 5),
+                                  child: Text('Sign In'.toUpperCase(), style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white),),
                                 ),
                                 onPressed: (){
                                   //After successful login we will redirect to profile page. Let's create profile page now
                                   Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) =>const HomeScreen()));
                                 },
                               ),
-                            ),
                             Container(
-                              margin: const EdgeInsets.fromLTRB(10,20,10,20),
+                              margin: const EdgeInsets.fromLTRB(10,10,10,10),
                               //child: Text('Don\'t have an account? Create'),
                               child: Text.rich(
                                 TextSpan(

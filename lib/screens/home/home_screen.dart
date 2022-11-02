@@ -29,6 +29,19 @@ void onTabTapped(int index){
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: const BackButton(color: Color.fromARGB(255, 77, 76, 79)),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: CircleAvatar(
+              backgroundColor: Colors.white,
+              child: Image.asset(
+                "assets/images/menus.png",
+                height: 20,
+              ),
+            ),
+          )
+        ],
         backgroundColor: Color.fromARGB(255, 76, 77, 79),
         title: Row(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -51,7 +64,7 @@ void onTabTapped(int index){
               padding: EdgeInsets.symmetric(),
               child: SearchProduct(),
             ),
-            Image.asset('assets/images/Banner.png'),
+            Image.asset('assets/images/banner.png'),
             const NewArrival(),
             const PopulerProduk(),
           ],

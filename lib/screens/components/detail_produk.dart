@@ -78,13 +78,21 @@ class DetailProduk extends StatelessWidget {
                   const SizedBox(height: defaultPadding * 3),
                   Center(
                     child: SizedBox(
-                      width: 250,
-                      height: 48,
+                      width: 160,
+                      height: 40,
                       child: ElevatedButton(
                         onPressed: () {},
-                        style: ElevatedButton.styleFrom(
-                            primary: primaryColor,
-                            shape: const StadiumBorder()),
+                        style: ButtonStyle(
+                                  backgroundColor: MaterialStateProperty.all(Color.fromARGB(255, 76, 77, 79)),
+                                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                    RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(30),
+                                    )
+                                  ),
+                                ),
+                        // style: ElevatedButton.styleFrom(
+                        //     primary: primaryColor,
+                        //     shape: const StadiumBorder()),
                         child: const Text("Bayar"),
                       ),
                     ),
